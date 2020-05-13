@@ -67,7 +67,7 @@ namespace ConsoleApp1
 
 
                     case '2':
-                        Console.WriteLine("Functional in development stage");                                              //Work with files (load / save data - .txt files are good enough)
+                        Console.WriteLine("Functional in development stage");                                              //Work with files 
                       //  File.WriteAllLines("filename", sort.Select(i => i.ToString()).ToArray());
                         Console.ReadKey();
                         break;
