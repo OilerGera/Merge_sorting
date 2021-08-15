@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,18 +12,18 @@ namespace ConsoleApp1
 {
     class Program
     {
-        static void Main(string[] args )
+        static void Main(string[] args)
         {
-           
-            
-            char response = '0';                                                                                            
+
+
+            char response = '0';
 
             do
 
             {
-                Console.WriteLine("Please choose option");
+                Console.WriteLine("Please choose option: ");
                 Console.WriteLine("1 - Add numbers one by one ");
-                Console.WriteLine("2 - Empty ");                                                                           // choosing options
+                Console.WriteLine("2 - Empty ");                                                                            // choosing options
                 Console.WriteLine("3 - Exit ");
                 response = Console.ReadKey().KeyChar;
                 Console.Clear();
@@ -35,7 +35,7 @@ namespace ConsoleApp1
                             Console.WriteLine("How much numbers contain in array?");
                             int size = Convert.ToInt32(Console.In.ReadLine());                                             // how much number will be sorted? 
                             int[] sort = new int[size];
-                            
+
 
                             Console.WriteLine("Add numbers one by one using 'Enter'");
 
@@ -43,21 +43,21 @@ namespace ConsoleApp1
                             {
                                 sort[i] = Convert.ToInt32(Console.ReadLine());
                             }
-                                int zero = 0;
-                                for (int a = 0; a < sort.Length; a++)
+                            int zero = 0;
+                            for (int a = 0; a < sort.Length; a++)
+                            {
+                                for (int b = a + 1; b < sort.Length; b++)                                                  // alghoritm of sorting
                                 {
-                                    for (int b = a + 1; b < sort.Length; b++)                                              // alghoritm of sorting
-                                    {                                                   
-                                        if (sort[a] > sort[b])
-                                        {
-                                            zero = sort[b];
-                                            sort[b] = sort[a];
-                                            sort[a] = zero;
-                                        }
+                                    if (sort[a] > sort[b])
+                                    {
+                                        zero = sort[b];
+                                        sort[b] = sort[a];
+                                        sort[a] = zero;
+                                    }
 
                                 }
-                                    Console.Write(sort[a] + " ");
-                                }
+                                Console.Write(sort[a] + " ");
+                            }
                             Console.ReadKey();
 
 
@@ -67,16 +67,16 @@ namespace ConsoleApp1
 
 
                     case '2':
-                        Console.WriteLine("Functional in development stage");                                              //Work with files (load / save data - .txt files are good enough)
-                      //  File.WriteAllLines("filename", sort.Select(i => i.ToString()).ToArray());
+                        Console.WriteLine("Functional in development stage");                                              // Work with files (load / save data - .txt files)
+                                                                                                                           //  File.WriteAllLines("filename", sort.Select(i => i.ToString()).ToArray());
                         Console.ReadKey();
                         break;
                         Console.Clear();
 
-
+                                                                                                                           // Exit
                     case '3':
                         Console.WriteLine();
-                        Console.WriteLine("Thanks for using our program. Bye Bye.");                        
+                        Console.WriteLine("Thanks for using program, goodbye.");
                         Environment.Exit(0);
                         break;
                         Console.Clear();
@@ -93,3 +93,4 @@ namespace ConsoleApp1
 
     }
 }
+
